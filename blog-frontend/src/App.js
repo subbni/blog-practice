@@ -1,4 +1,3 @@
-import './App.css';
 import { Route, Routes } from '../node_modules/react-router-dom/dist/index';
 import PostListPage from './pages/PostListPage';
 import LoginPage from './pages/LoginPage';
