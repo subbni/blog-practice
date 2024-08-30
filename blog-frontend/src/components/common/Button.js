@@ -1,7 +1,8 @@
+import { Link } from 'react-router-dom';
 import palette from '../../lib/styles/palette';
 import styled, { css } from 'styled-components';
 
-const StyledButton = styled.button`
+const buttonStyle = css`
 	border: none;
 	border-radius: 4px;
 	font-size: 1rem;
@@ -35,7 +36,21 @@ const StyledButton = styled.button`
 		`}
 `;
 
+const StyledButton = styled.button`
+	${buttonStyle}
+`;
+
+const StyledLink = styled(Link)`
+	${buttonStyle}
+`;
+
 // styled-components로 만든 컴포넌트를 바로 내보내면 자동 import가 제대로 작동하지 않음
-const Button = (props) => <StyledButton {...props} />;
+const Button = (props) => {
+	return props.to ? (
+		<StyledLink {...props} cyan={props.cyan ? 1 : 0} />
+	) : (
+		<StyledButton {...props} />
+	);
+};
 
 export default Button;
