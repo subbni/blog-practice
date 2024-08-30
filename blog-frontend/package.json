@@ -3,10 +3,13 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
+		"@babel/plugin-syntax-flow": "^7.24.7",
+		"@babel/plugin-transform-react-jsx": "^7.25.2",
 		"@testing-library/jest-dom": "^5.14.1",
 		"@testing-library/react": "^13.0.0",
 		"@testing-library/user-event": "^13.2.1",
 		"axios": "^1.7.5",
+		"eslint": "^9.9.1",
 		"immer": "^10.1.1",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
@@ -44,5 +47,12 @@
 			"last 1 safari version"
 		]
 	},
-	"proxy": "http://localhost:4000/"
+	"proxy": "http://localhost:4000/",
+	"devDependencies": {
+		"@babel/eslint-parser": "^7.25.1",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-config-react-app": "^7.0.1",
+		"eslint-plugin-react": "^7.35.0",
+		"eslint-plugin-react-hooks": "^4.6.2"
+	}
 }
