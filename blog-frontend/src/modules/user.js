@@ -1,5 +1,5 @@
 import { createAction, handleActions } from 'redux-actions';
-import { takeLatest } from 'redux-saga/effecs';
+import { takeLatest } from 'redux-saga/effects';
 import createRequestSaga, {
 	createRequestActionTypes,
 } from '../lib/createRequestSaga';
@@ -23,20 +23,22 @@ const initialState = {
 	checkError: null,
 };
 
-export default handleActions({
-	[TEMP_SET_USER]: (state, { payload: user }) => ({
-		...state,
-		user,
-	}),
-	[CHECK_SUCCESS]: (state, { payload: user }) => ({
-		...state,
-		user,
-		checkError: null,
-	}),
-	[CHECK_FAILURE]: (state, { payload: error }) => ({
-		...state,
-		user: null,
-		checkError: error,
-	}),
+export default handleActions(
+	{
+		[TEMP_SET_USER]: (state, { payload: user }) => ({
+			...state,
+			user,
+		}),
+		[CHECK_SUCCESS]: (state, { payload: user }) => ({
+			...state,
+			user,
+			checkError: null,
+		}),
+		[CHECK_FAILURE]: (state, { payload: error }) => ({
+			...state,
+			user: null,
+			checkError: error,
+		}),
+	},
 	initialState,
-});
+);
